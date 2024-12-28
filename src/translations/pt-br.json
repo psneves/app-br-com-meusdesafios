@@ -1,0 +1,33 @@
+{
+  "onboarding": {
+    "message": "Bem-vindo(a) de volta!"
+  },
+  "settings": {
+    "about": "Sobre",
+    "app_name": "Nome do Aplicativo",
+    "english": "Inglês",
+    "generale": "Geral",
+    "github": "Github",
+    "language": "Idioma",
+    "links": "Links",
+    "logout": "Sair",
+    "more": "Mais",
+    "portuguese": "Português do Brasil",
+    "privacy": "Política de Privacidade",
+    "rate": "Avaliar",
+    "share": "Compartilhar",
+    "support": "Suporte",
+    "support_us": "Apoie-nos",
+    "terms": "Termos de Serviço",
+    "theme": {
+      "dark": "Escuro",
+      "light": "Claro",
+      "system": "Sistema",
+      "title": "Tema"
+    },
+    "title": "Configurações",
+    "version": "Versão",
+    "website": "Site"
+  },
+  "welcome": "Bem-vindo(a) ao site do aplicativo Meus Desafios"
+}

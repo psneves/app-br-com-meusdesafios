@@ -26,11 +26,7 @@ export const translate = memoize(
 
 export const changeLanguage = (lang: Language) => {
   i18n.changeLanguage(lang);
-  if (lang === 'ar') {
-    I18nManager.forceRTL(true);
-  } else {
-    I18nManager.forceRTL(false);
-  }
+  I18nManager.forceRTL(false); // to be set as TRUE if the language is RTL (e.g. Arabic)
   if (Platform.OS === 'ios' || Platform.OS === 'android') {
     if (__DEV__) NativeModules.DevSettings.reload();
     else RNRestart.restart();

@@ -8,17 +8,17 @@ import * as z from 'zod';
 import { Button, ControlledInput, Text, View } from '@/components/ui';
 
 const schema = z.object({
-  name: z.string().optional(),
+  nome: z.string().optional(),
   email: z
     .string({
-      required_error: 'Email is required',
+      required_error: 'O e-mail é obrigatório',
     })
-    .email('Invalid email format'),
-  password: z
+    .email('Formato de e-mail inválido'),
+  senha: z
     .string({
-      required_error: 'Password is required',
+      required_error: 'A senha é obrigatória',
     })
-    .min(6, 'Password must be at least 6 characters'),
+    .min(6, 'A senha deve ter no mínimo 6 caracteres'),
 });
 
 export type FormType = z.infer<typeof schema>;
@@ -43,41 +43,45 @@ export const LoginForm = ({ onSubmit = () => {} }: LoginFormProps) => {
             testID="form-title"
             className="pb-6 text-center text-4xl font-bold"
           >
-            Sign In
+            Meus Desafios
           </Text>
 
           <Text className="mb-6 max-w-xs text-center text-gray-500">
-            Welcome! 👋 This is a demo login screen! Feel free to use any email
-            and password to sign in and try it out.
+            Bem-vindo(a) de volta! 👋
+            <br />
+            Acesse sua conta e continue sua jornada!
           </Text>
         </View>
-
-        <ControlledInput
-          testID="name"
-          control={control}
-          name="name"
-          label="Name"
-        />
 
         <ControlledInput
           testID="email-input"
           control={control}
           name="email"
-          label="Email"
+          label="E-mail"
+          placeholder="Digite seu e-mail"
         />
         <ControlledInput
           testID="password-input"
           control={control}
-          name="password"
-          label="Password"
-          placeholder="***"
+          name="senha"
+          label="Senha"
+          placeholder="Digite sua senha"
           secureTextEntry={true}
         />
         <Button
           testID="login-button"
-          label="Login"
+          label="Entrar"
           onPress={handleSubmit(onSubmit)}
         />
+
+        <View className="mt-4 items-center">
+          <Text className="text-gray-500">Ainda não tem conta? </Text>
+          <Button
+            testID="register-button"
+            label="Cadastre-se"
+            onPress={handleSubmit(onSubmit)}
+          />
+        </View>
       </View>
     </KeyboardAvoidingView>
   );
