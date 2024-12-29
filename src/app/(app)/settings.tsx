@@ -1,6 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Env } from '@env';
 import { useColorScheme } from 'nativewind';
+import React from 'react';
 
 import { Item } from '@/components/settings/item';
 import { ItemsContainer } from '@/components/settings/items-container';
@@ -13,7 +14,7 @@ import {
   Text,
   View,
 } from '@/components/ui';
-import { Github, Rate, Share, Support, Website } from '@/components/ui/icons';
+import { Rate, Website } from '@/components/ui/icons';
 import { translate, useAuth } from '@/lib';
 
 export default function Settings() {
@@ -35,41 +36,37 @@ export default function Settings() {
             <ThemeItem />
           </ItemsContainer>
 
-          <ItemsContainer title="settings.about">
+          <ItemsContainer title="settings.info">
             <Item text="settings.app_name" value={Env.NAME} />
             <Item text="settings.version" value={Env.VERSION} />
           </ItemsContainer>
 
-          <ItemsContainer title="settings.support_us">
-            <Item
-              text="settings.share"
-              icon={<Share color={iconColor} />}
-              onPress={() => {}}
-            />
+          <ItemsContainer title="settings.links">
             <Item
               text="settings.rate"
               icon={<Rate color={iconColor} />}
               onPress={() => {}}
             />
             <Item
-              text="settings.support"
-              icon={<Support color={iconColor} />}
-              onPress={() => {}}
+              text="settings.privacy"
+              icon={<Website color={iconColor} />}
+              onPress={() => {
+                window.open('https://meusdesafios.com.br/termos-uso', '_blank');
+              }}
             />
-          </ItemsContainer>
-
-          <ItemsContainer title="settings.links">
-            <Item text="settings.privacy" onPress={() => {}} />
-            <Item text="settings.terms" onPress={() => {}} />
             <Item
-              text="settings.github"
-              icon={<Github color={iconColor} />}
-              onPress={() => {}}
+              text="settings.terms"
+              icon={<Website color={iconColor} />}
+              onPress={() => {
+                window.open('https://meusdesafios.com.br/termos-uso', '_blank');
+              }}
             />
             <Item
               text="settings.website"
               icon={<Website color={iconColor} />}
-              onPress={() => {}}
+              onPress={() => {
+                window.open('https://meusdesafios.com.br', '_blank');
+              }}
             />
           </ItemsContainer>
 

@@ -1,24 +1,39 @@
 {
+  "login": {
+    "emailInvalidError": "Invalid email format",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "emailRequiredError": "Email is required",
+    "loginButton": "Log in",
+    "noAccountMessage": "Don't have an account yet?",
+    "passwordLabel": "Password",
+    "passwordMinLengthError": "Password must be at least 6 characters",
+    "passwordPlaceholder": "Enter your password",
+    "passwordRequiredError": "Password is required",
+    "registerButton": "Sign up",
+    "title": "My Challenges",
+    "welcomeMessage": "Welcome back! 👋\nLog in to your account and continue your journey!"
+  },
   "onboarding": {
-    "message": "Welcome to obytes app site"
+    "message": "Welcome back!"
   },
   "settings": {
-    "about": "About",
     "app_name": "App Name",
     "english": "English",
     "generale": "General",
     "github": "Github",
+    "info": "Information",
     "language": "Language",
     "links": "Links",
-    "logout": "Logout",
+    "logout": "Log out",
     "more": "More",
-    "portuguese": "Portuguese (Brazil)",
+    "portuguese": "Brazilian Portuguese",
     "privacy": "Privacy Policy",
     "rate": "Rate",
     "share": "Share",
     "support": "Support",
-    "support_us": "Support Us",
-    "terms": "Terms of Service",
+    "support_us": "Support us",
+    "terms": "Terms of Use",
     "theme": {
       "dark": "Dark",
       "light": "Light",
@@ -29,5 +44,5 @@
     "version": "Version",
     "website": "Website"
   },
-  "welcome": "Welcome to obytes app site"
+  "welcome": "Welcome to the My Challenges app website"
 }

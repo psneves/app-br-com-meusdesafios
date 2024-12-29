@@ -1,13 +1,28 @@
 {
+  "login": {
+    "emailInvalidError": "Formato de e-mail inválido",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Digite seu e-mail",
+    "emailRequiredError": "O e-mail é obrigatório",
+    "loginButton": "Entrar",
+    "noAccountMessage": "Ainda não tem conta?",
+    "passwordLabel": "Senha",
+    "passwordMinLengthError": "A senha deve ter no mínimo 6 caracteres",
+    "passwordPlaceholder": "Digite sua senha",
+    "passwordRequiredError": "A senha é obrigatória",
+    "registerButton": "Cadastre-se",
+    "title": "Meus Desafios",
+    "welcomeMessage": "Bem-vindo(a) de volta! 👋\nAcesse sua conta e continue sua jornada!"
+  },
   "onboarding": {
     "message": "Bem-vindo(a) de volta!"
   },
   "settings": {
-    "about": "Sobre",
     "app_name": "Nome do Aplicativo",
     "english": "Inglês",
     "generale": "Geral",
     "github": "Github",
+    "info": "Informações",
     "language": "Idioma",
     "links": "Links",
     "logout": "Sair",
@@ -18,7 +33,7 @@
     "share": "Compartilhar",
     "support": "Suporte",
     "support_us": "Apoie-nos",
-    "terms": "Termos de Serviço",
+    "terms": "Termos de Uso",
     "theme": {
       "dark": "Escuro",
       "light": "Claro",

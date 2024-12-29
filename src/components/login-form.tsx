@@ -1,24 +1,25 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { t } from 'i18next';
 import React from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { KeyboardAvoidingView } from 'react-native-keyboard-controller';
 import * as z from 'zod';
 
 import { Button, ControlledInput, Text, View } from '@/components/ui';
 
 const schema = z.object({
-  nome: z.string().optional(),
   email: z
     .string({
-      required_error: 'O e-mail é obrigatório',
+      required_error: t('login.emailRequiredError'),
     })
-    .email('Formato de e-mail inválido'),
-  senha: z
+    .email(t('login.emailInvalidError')),
+  password: z
     .string({
-      required_error: 'A senha é obrigatória',
+      required_error: t('login.passwordRequiredError'),
     })
-    .min(6, 'A senha deve ter no mínimo 6 caracteres'),
+    .min(6, t('login.passwordMinLengthError')),
 });
 
 export type FormType = z.infer<typeof schema>;
@@ -31,6 +32,8 @@ export const LoginForm = ({ onSubmit = () => {} }: LoginFormProps) => {
   const { handleSubmit, control } = useForm<FormType>({
     resolver: zodResolver(schema),
   });
+  const { t } = useTranslation();
+
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
@@ -43,13 +46,11 @@ export const LoginForm = ({ onSubmit = () => {} }: LoginFormProps) => {
             testID="form-title"
             className="pb-6 text-center text-4xl font-bold"
           >
-            Meus Desafios
+            {t('login.title')}
           </Text>
 
           <Text className="mb-6 max-w-xs text-center text-gray-500">
-            Bem-vindo(a) de volta! 👋
-            <br />
-            Acesse sua conta e continue sua jornada!
+            {t('login.welcomeMessage')}
           </Text>
         </View>
 
@@ -57,30 +58,26 @@ export const LoginForm = ({ onSubmit = () => {} }: LoginFormProps) => {
           testID="email-input"
           control={control}
           name="email"
-          label="E-mail"
-          placeholder="Digite seu e-mail"
+          label={t('login.emailLabel')}
+          placeholder={t('login.emailPlaceholder')}
         />
         <ControlledInput
           testID="password-input"
           control={control}
-          name="senha"
-          label="Senha"
-          placeholder="Digite sua senha"
+          name="password"
+          label={t('login.passwordLabel')}
+          placeholder={t('login.passwordPlaceholder')}
           secureTextEntry={true}
         />
         <Button
           testID="login-button"
-          label="Entrar"
+          label={t('login.loginButton')}
           onPress={handleSubmit(onSubmit)}
         />
 
         <View className="mt-4 items-center">
-          <Text className="text-gray-500">Ainda não tem conta? </Text>
-          <Button
-            testID="register-button"
-            label="Cadastre-se"
-            onPress={handleSubmit(onSubmit)}
-          />
+          <Text className="text-gray-500">{t('login.noAccountMessage')}</Text>
+          <Button label={t('login.registerButton')} variant="ghost" />
         </View>
       </View>
     </KeyboardAvoidingView>
